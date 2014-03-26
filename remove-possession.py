@@ -18,6 +18,11 @@ res = subprocess.Popen(commond_netstat_list, shell=True, stdout=subprocess.PIPE,
 
 result = res.stdout.readlines()
 
+if len(result) == 0:
+	print("no task possesion port : 5037")
+	os.system('pause')
+	exit()
+
 print(result)
 
 strlist = str(result).split('  TCP    ')
